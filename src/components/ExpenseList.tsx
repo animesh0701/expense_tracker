@@ -2,10 +2,10 @@ import React from "react";
 
 const ExpenseList = () => {
   return (
-    <div>
-      <div className="dropdown d-flex p=40">
+    <div className="d-flex align-content-around flex-column">
+      <div className="dropdown d-flex mt-2 mb-2">
         <button
-          className="btn btn-light dropdown-toggle border-dark flex-fill d-flex justify-content-between align-items-center"
+          className="btn btn-light dropdown-toggle border-secondary flex-fill d-flex justify-content-between align-items-center"
           data-bs-toggle="dropdown"
           type="button"
           id="categories"
@@ -24,18 +24,33 @@ const ExpenseList = () => {
               Entertainment
             </a>
           </li>
-          <li>
-            <a className="dropdown-item" href="#">
-              Bills
-            </a>
-          </li>
-          <li>
-            <a className="dropdown-item" href="#">
-              Taxes
-            </a>
-          </li>
         </ul>
       </div>
+
+      <table className="table table-bordered border-secondary mb-2 p-2">
+        <thead>
+          <tr>
+            <th scope="col">Description</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Category</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Milk</td>
+            <td>300</td>
+            <td>Grocery</td>
+            <td>
+              <button className="btn btn-outline-danger">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Total</th>
+            <td colSpan={3}>300</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   );
 };
