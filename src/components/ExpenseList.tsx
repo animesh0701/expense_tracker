@@ -3,9 +3,9 @@ import React from "react";
 const ExpenseList = () => {
   return (
     <div>
-      <div className="dropdown">
+      <div className="dropdown d-flex p=40">
         <button
-          className="btn btn-secondary dropdown-toggle"
+          className="btn btn-light dropdown-toggle border-dark flex-fill d-flex justify-content-between align-items-center"
           data-bs-toggle="dropdown"
           type="button"
           id="categories"
@@ -13,9 +13,12 @@ const ExpenseList = () => {
           aria-haspopup="true"
           aria-expanded="false"
         >
-          Categories
+          All Categories...
         </button>
-        <ul className="dropdown-menu" aria-labelledby="categories">
+        <ul
+          className="dropdown-menu flex-fill w-100"
+          aria-labelledby="categories"
+        >
           <li>
             <a className="dropdown-item" href="#">
               Entertainment
