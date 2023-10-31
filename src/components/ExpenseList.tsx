@@ -3,7 +3,7 @@ import React from "react";
 const ExpenseList = () => {
   return (
     <div className="d-flex align-content-around flex-column">
-      <div className="dropdown d-flex mt-2 mb-2">
+      <div className="dropdown d-flex mt-2 mb-4">
         <button
           className="btn btn-light dropdown-toggle border-secondary flex-fill d-flex justify-content-between align-items-center"
           data-bs-toggle="dropdown"
@@ -38,16 +38,20 @@ const ExpenseList = () => {
         </thead>
         <tbody>
           <tr>
-            <td>Milk</td>
-            <td>300</td>
-            <td>Grocery</td>
+            <td className="pt-3 pb-1">Milk</td>
+            <td className="pt-3 pb-1">300</td>
+            <td className="pt-3 pb-1">Grocery</td>
             <td>
               <button className="btn btn-outline-danger">Delete</button>
             </td>
           </tr>
           <tr>
-            <th scope="row">Total</th>
-            <td colSpan={3}>300</td>
+            <th scope="row" className="pt-2 pb-2">
+              Total
+            </th>
+            <td className="pt-2 pb-2" colSpan={3}>
+              300
+            </td>
           </tr>
         </tbody>
       </table>
