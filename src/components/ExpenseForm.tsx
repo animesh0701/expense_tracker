@@ -20,6 +20,7 @@ const ExpenseForm = () => {
           Category
         </label>
         <select className="form-select" name="category" id="category">
+          <option selected>Select Category...</option>
           <option value="Grocery">Grocery</option>
           <option value="Greocery">Groecery</option>
         </select>
