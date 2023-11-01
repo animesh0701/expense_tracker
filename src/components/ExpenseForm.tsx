@@ -10,13 +10,12 @@ const schema = z.object({
   amount: z
     .number({ invalid_type_error: "amount is required" })
     .min(1, { message: "amount must be greater than 0" }),
-  category: z
-    .string()
-    .refine((val) => val !== "Choose a category...", {
-      message: "Choose a valid category",
-    }),
+  category: z.string().refine((val) => val !== "Choose a category...", {
+    message: "Choose a valid category",
+  }),
 });
 
+//interfacing type with zod
 type FormData = z.infer<typeof schema>;
 
 interface Props {
