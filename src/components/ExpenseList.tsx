@@ -1,6 +1,10 @@
 import React from "react";
-
-const ExpenseList = () => {
+interface Props {
+  items: { description: string; amount: number; category: string }[];
+  handleClick: (key: string) => void;
+  total: number;
+}
+const ExpenseList = ({ items, handleClick, total }: Props) => {
   return (
     <div className="d-flex align-content-around flex-column">
       <div className="dropdown d-flex mt-2 mb-4">
@@ -19,11 +23,13 @@ const ExpenseList = () => {
           className="dropdown-menu flex-fill w-100"
           aria-labelledby="categories"
         >
-          <li>
-            <a className="dropdown-item" href="#">
-              Entertainment
-            </a>
-          </li>
+          {items.map((item) => (
+            <li key={item.description}>
+              <a className="dropdown-item" href="#">
+                {item.category}
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
 
@@ -37,20 +43,29 @@ const ExpenseList = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td className="pt-3 pb-1">Milk</td>
-            <td className="pt-3 pb-1">300</td>
-            <td className="pt-3 pb-1">Grocery</td>
-            <td>
-              <button className="btn btn-outline-danger">Delete</button>
-            </td>
-          </tr>
+          {items.map((item) => (
+            <tr key={item.description}>
+              <td className="pt-3 pb-1">{item.description}</td>
+              <td className="pt-3 pb-1">{item.amount}</td>
+              <td className="pt-3 pb-1">{item.category}</td>
+              <td>
+                <button
+                  onClick={() => {
+                    handleClick(item.description);
+                  }}
+                  className="btn btn-outline-danger"
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+          ))}
           <tr>
             <th scope="row" className="pt-2 pb-2">
               Total
             </th>
             <td className="pt-2 pb-2" colSpan={3}>
-              300
+              {total}
             </td>
           </tr>
         </tbody>
