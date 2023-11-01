@@ -26,17 +26,11 @@ function App() {
     setList(list.filter((item) => item.description !== key));
   };
 
-  //Total expense calculator
-  const amounts = list.map((item) => {
-    return item.amount;
-  });
-  const total = amounts.reduce((sum, amount) => sum + amount, 0);
-
   return (
     <div className="App">
       <h1>Expense Tracker</h1>
       <ExpenseForm formInput={updateList} />
-      <ExpenseList items={list} handleClick={clickHandler} total={total} />
+      <ExpenseList items={list} handleClick={clickHandler} />
     </div>
   );
 }
