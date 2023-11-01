@@ -10,11 +10,6 @@ function App() {
       amount: 75,
       category: "Grocery",
     },
-    {
-      description: "Milk",
-      amount: 55,
-      category: "Grocery",
-    },
   ]);
 
   //update Table
