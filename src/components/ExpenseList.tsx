@@ -54,7 +54,7 @@ const ExpenseList = ({ items, handleClick }: Props) => {
             ? items.map((item) => (
                 <tr key={item.description}>
                   <td className="pt-3 pb-1">{item.description}</td>
-                  <td className="pt-3 pb-1">{item.amount}</td>
+                  <td className="pt-3 pb-1">${item.amount}</td>
                   <td className="pt-3 pb-1">{item.category}</td>
                   <td>
                     <button
@@ -93,7 +93,7 @@ const ExpenseList = ({ items, handleClick }: Props) => {
               Total
             </th>
             <td className="pt-2 pb-2" colSpan={3}>
-              {total}
+              ${total}
             </td>
           </tr>
         </tbody>
