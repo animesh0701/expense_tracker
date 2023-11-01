@@ -27,11 +27,10 @@ function App() {
   };
 
   //Total expense calculator
-  let total: number = 0;
-  list.map((item) => {
-    total += item.amount;
-    console.log(total);
+  const amounts = list.map((item) => {
+    return item.amount;
   });
+  const total = amounts.reduce((sum, amount) => sum + amount, 0);
 
   return (
     <div className="App">

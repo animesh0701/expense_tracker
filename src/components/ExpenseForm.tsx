@@ -14,7 +14,7 @@ const ExpenseForm = ({ formInput }: Props) => {
   const submitHandler = (data: FieldValues) =>
     formInput({
       description: data.description,
-      amount: data.amount,
+      amount: parseInt(data.amount),
       category: data.category,
     });
   return (
