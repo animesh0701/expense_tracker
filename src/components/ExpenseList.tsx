@@ -19,8 +19,6 @@ const ExpenseList = ({ items, handleClick }: Props) => {
         });
   const total = amounts.reduce((total, amount) => total + amount, 0);
 
-  console.log(total);
-
   return (
     <div className="d-flex align-content-around flex-column">
       <div className="mt-2 mb-4">

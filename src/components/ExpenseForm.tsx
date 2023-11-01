@@ -31,7 +31,7 @@ const ExpenseForm = ({ formInput }: Props) => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm<FormData>({ resolver: zodResolver(schema) });
 
   //to pass data back to the parent component
@@ -94,7 +94,11 @@ const ExpenseForm = ({ formInput }: Props) => {
           <p className="text-danger">{errors.category.message}</p>
         )}
       </div>
-      <button className="btn btn-primary mt-2" type="submit">
+      <button
+        disabled={!isValid}
+        className="btn btn-primary mt-2"
+        type="submit"
+      >
         Submit
       </button>
     </form>
