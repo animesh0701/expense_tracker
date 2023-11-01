@@ -1,9 +1,11 @@
 import React from "react";
+
 interface Props {
   items: { description: string; amount: number; category: string }[];
   handleClick: (key: string) => void;
   total: number;
 }
+
 const ExpenseList = ({ items, handleClick, total }: Props) => {
   return (
     <div className="d-flex align-content-around flex-column">
