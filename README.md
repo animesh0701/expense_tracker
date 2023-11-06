@@ -3,7 +3,7 @@ A React + Typescript project to track and filter your daily expenses.
 
 Notes - https://docs.google.com/document/d/1eCPop-O9yLKbJio_W3bk0iwvFBtQIa8w75kO9Qeyobc/edit
 
-Deployed here - 
+Deployed here - https://expense-tracker-three-black.vercel.app/
 
 The project was only created for practice purposes. 
 
