@@ -2,6 +2,16 @@ import { useState } from "react";
 import "./App.css";
 import ExpenseForm from "./components/ExpenseForm";
 import ExpenseList from "./components/ExpenseList";
+import ExpenseFilter from "./components/ExpenseFilter";
+
+export const categories = [
+  "Grocery",
+  "Entertainment",
+  "Bills",
+  "Taxes",
+  "Services",
+  "Shopping",
+];
 
 function App() {
   const [list, setList] = useState([
@@ -10,7 +20,28 @@ function App() {
       amount: 75,
       category: "Grocery",
     },
+    {
+      description: "Water Bill",
+      amount: 25,
+      category: "Bills",
+    },
+    {
+      description: "Milk",
+      amount: 15,
+      category: "Grocery",
+    },
+    {
+      description: "Movie Tickets",
+      amount: 5,
+      category: "Entertainment",
+    },
   ]);
+  const [filter, setFilter] = useState("All categories");
+
+  //Set category Filter
+  const Category = (category: string) => {
+    setFilter(category);
+  };
 
   //update Table
   const updateList = (data: {
@@ -26,11 +57,17 @@ function App() {
     setList(list.filter((item) => item.description !== key));
   };
 
+  const expenses =
+    filter === "All categories"
+      ? list
+      : list.filter((item) => item.category === filter);
+
   return (
     <div className="App">
       <h1>Expense Tracker</h1>
       <ExpenseForm formInput={updateList} />
-      <ExpenseList items={list} handleClick={clickHandler} />
+      <ExpenseFilter OnSelectCategory={Category} />
+      <ExpenseList items={expenses} handleClick={clickHandler} />
     </div>
   );
 }
