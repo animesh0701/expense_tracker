@@ -1,9 +1,11 @@
 # Expense_tracker
 A React + Typescript project to track and filter your daily expenses.
+
 Notes - https://docs.google.com/document/d/1eCPop-O9yLKbJio_W3bk0iwvFBtQIa8w75kO9Qeyobc/edit
+
 Deployed here - 
 
-A project created for practice purposes. 
+The project was only created for practice purposes. 
 
 Consists of a Form where the user can add an expense along with its category.
 ![image](https://github.com/animesh0701/expense_tracker/assets/87601469/b0fb4118-dbbd-4356-b119-aab0e00b516e)
@@ -16,3 +18,8 @@ You can delete any specific expense and the total is updated.
 
 You can filter expenses by category and only expenses of that category will be rendered.
 ![image](https://github.com/animesh0701/expense_tracker/assets/87601469/621b133e-9b90-4634-b454-ce86cf790c6a)
+
+The form is validated using React hook forms and Zod.
+![image](https://github.com/animesh0701/expense_tracker/assets/87601469/1be73166-9f23-4e19-ae75-a786946a00e2)
+
+
